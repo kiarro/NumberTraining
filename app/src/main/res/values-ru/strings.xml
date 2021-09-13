@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NumberTraining</string>
+    <string name="fld_result">результат</string>
+    <string name="btn_send">Проверить</string>
+    <string name="wrong">Ошибка</string>
+</resources>

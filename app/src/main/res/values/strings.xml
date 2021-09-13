@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">NumberTraining</string>
-    <string name="btn_send">Проверить</string>
-    <string name="fld_result">результат</string>
+    <string name="fld_result">result</string>
+    <string name="btn_send">Check</string>
+    <string name="wrong">wrong</string>
 </resources>

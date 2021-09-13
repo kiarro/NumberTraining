@@ -3,9 +3,8 @@ package com.kiarro.yuri.numbertraining;
 import java.util.Random;
 
 public class CountState {
-    private int currentNumber;
-    private int additionNumber;
-    private int resultNumber;
+    private int firstNumber;
+    private int secondNumber;
 
     private int minAddition;
     private int maxAddition;
@@ -16,7 +15,6 @@ public class CountState {
 
     public CountState(){
         InitState();
-
     }
 
     public void Restart(){
@@ -30,18 +28,17 @@ public class CountState {
 
         attempts = 0;
 
-        currentNumber = 0;
-        additionNumber = 0;
-        resultNumber = 0;
+        GenerateNext();
     }
 
     private boolean CompareResult(int num){
-        return num == resultNumber;
+        return num == (firstNumber+secondNumber);
     }
 
     private void GenerateNext(){
-        additionNumber = (new Random()).nextInt(maxAddition-minAddition)+minAddition;
-        resultNumber = currentNumber+additionNumber;
+        firstNumber = (new Random()).nextInt(maxAddition-minAddition)+minAddition;
+        secondNumber = (new Random()).nextInt(maxAddition-minAddition)+minAddition;
+
     }
 
 
@@ -64,6 +61,7 @@ public class CountState {
             if (attempts<maxAttempts) {
                 res = attempts;
             } else {
+                InitState();
                 attempts=0;
                 res = -1;
             }
@@ -72,11 +70,17 @@ public class CountState {
     }
 
 
-    public int getCurrentNumber(){
-        return currentNumber;
+    public String getStatement(){
+        String res = String.valueOf(firstNumber);
+        if (secondNumber>=0) {
+            res += "+";
+        }
+        res += String.valueOf(secondNumber);
+        res += "=";
+        return res;
     }
-    public int getAdditionNumber(){
-        return additionNumber;
-    }
+
+    public int getAttempts(){ return attempts; }
+    public int getMaxAttempts(){ return maxAttempts; }
 
 }
