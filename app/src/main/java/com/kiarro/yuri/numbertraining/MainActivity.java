@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         TxtAttempts = (TextView)findViewById(R.id.attempts);
         ImgWrong = (ImageView)findViewById(R.id.imgWrong);
 
-
+        ResetWrongAnswer();
     }
 
     protected void Init(){
@@ -73,19 +73,19 @@ public class MainActivity extends AppCompatActivity {
         int res = state.CheckResult(num);
         if (res==0) {
             // right answer handler
-            ImgWrong.setVisibility(View.INVISIBLE);
+            ResetWrongAnswer();
             UpdateNumbers();
         }
         if (res>0) {
             // wrong answer handler
 //            animWrongAnswer.start();
-            ImgWrong.setVisibility(View.VISIBLE);
+            SetWrongAnswer(String.valueOf(num));
         }
         if (res==-1){
             // too much attempts handler
             UpdateNumbers();
 //            animWrongAnswer.start();
-            ImgWrong.setVisibility(View.INVISIBLE);
+            ResetWrongAnswer();
         }
         EdtResult.setText("");
         UpdateAttempts();
@@ -101,6 +101,17 @@ public class MainActivity extends AppCompatActivity {
 
         TxtAttempts.setText(i1+" / "+i2);
     }
+
+    private void SetWrongAnswer(String txt){
+        TxtWResult.setText(txt);
+        ImgWrong.setAlpha(1f);
+    }
+
+    private void ResetWrongAnswer(){
+        TxtWResult.setText("");
+        ImgWrong.setAlpha(0f);
+    }
+
 
 
 }
