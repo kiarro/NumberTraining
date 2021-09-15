@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NumberTraining</string>
-    <string name="fld_result">результат</string>
+    <string name="fld_result">" "</string>
     <string name="btn_send">Проверить</string>
     <string name="wrong">Ошибка</string>
+    <string name="rating">"Оценка: "</string>
+    <string name="too_small">" "</string>
+    <string name="btn_next">следующий</string>
+    <string name="try_again">Неверный ответ. Попробуйте снова</string>
 </resources>

@@ -12,6 +12,7 @@ public class CountState {
     private int maxAttempts;
     private int attempts;
 
+    public Statistic statistic;
 
     public CountState(){
         InitState();
@@ -22,9 +23,11 @@ public class CountState {
     }
 
     private void InitState(){
-        minAddition = -10;
-        maxAddition = 10;
-        maxAttempts = 3;
+        statistic = new Statistic();
+
+        minAddition = -99;
+        maxAddition = 99;
+        maxAttempts = -1;
 
         attempts = 0;
 
@@ -35,7 +38,7 @@ public class CountState {
         return num == (firstNumber+secondNumber);
     }
 
-    private void GenerateNext(){
+    public void GenerateNext(){
         firstNumber = (new Random()).nextInt(maxAddition-minAddition)+minAddition;
         secondNumber = (new Random()).nextInt(maxAddition-minAddition)+minAddition;
 
@@ -54,14 +57,14 @@ public class CountState {
         boolean check = CompareResult(num);
         if (check) {
             res = 0;
-            GenerateNext();
             attempts = 0;
+            statistic.AddRight();
         } else {
             attempts++;
-            if (attempts<maxAttempts) {
+            statistic.AddWrong();
+            if (maxAttempts<0 || attempts<maxAttempts) {
                 res = attempts;
             } else {
-                InitState();
                 attempts=0;
                 res = -1;
             }
@@ -82,5 +85,14 @@ public class CountState {
 
     public int getAttempts(){ return attempts; }
     public int getMaxAttempts(){ return maxAttempts; }
+
+    public void setNumberBorders(int min, int max){
+        minAddition = min;
+        maxAddition = max;
+    }
+
+    public String getRating(){
+        return statistic.GetRatingInFive();
+    }
 
 }

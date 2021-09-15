@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">NumberTraining</string>
-    <string name="fld_result">result</string>
+    <string name="fld_result">" "</string>
     <string name="btn_send">Check</string>
     <string name="wrong">wrong</string>
+    <string name="rating">"Rating: "</string>
+    <string name="too_small">" "</string>
+    <string name="btn_next">next</string>
+    <string name="try_again">Wrong answer. Please try again</string>
 </resources>
