@@ -6,13 +6,14 @@ import android.os.Bundle;
 public class Statistic {
     // array with bottom of diapason
     private Pair<Double, String>[] Rates = new Pair[]{
-            new Pair(0.98, "5+"),
+            new Pair(0.95, "5+"),
             new Pair(0.90, "5"),
             new Pair(0.85, "5-"),
             new Pair(0.80, "4+"),
-            new Pair(0.75, "4-"),
-            new Pair(0.70, "3+"),
-            new Pair(0.60, "3"),
+            new Pair(0.75, "4"),
+            new Pair(0.70, "4-"),
+            new Pair(0.65, "3+"),
+            new Pair(0.55, "3"),
             new Pair(0.50, "3-"),
             new Pair(0.40, "2+"),
             new Pair(0.30, "2"),

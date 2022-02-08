@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     TextView TxtRating;
     Button BtnCheck;
     TextView TxtAgain;
+    TextView TxtSolved;
+
 
     AnimatorSet animWrongAnswer;
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         TxtRating = (TextView)findViewById(R.id.rating);
         BtnCheck = (Button)findViewById(R.id.btnSend);
         TxtAgain = (TextView)findViewById(R.id.txt_again);
+        TxtSolved = (TextView)findViewById(R.id.solved);
 
         ResetWrongAnswer();
     }
@@ -151,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
 
         BtnCheck.setText(R.string.btn_next);
         TxtAgain.setVisibility(View.INVISIBLE);
+
+        String txt1 = getString(R.string.solved);
+        TxtSolved.setText(txt1 + state.statistic.GetRightAnswers());
     }
 
     private void generateNext(){

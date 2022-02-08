@@ -7,4 +7,5 @@
     <string name="too_small">" "</string>
     <string name="btn_next">next</string>
     <string name="try_again">Wrong answer. Please try again</string>
+    <string name="solved">Solved:</string>
 </resources>

@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,11 +27,12 @@
                 android:id="@+id/statement"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5sp"
-                android:layout_marginTop="5sp"
-                android:layout_marginBottom="5sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:autoSizeTextType="none"
                 android:fontFamily="sans-serif"
-                android:padding="5sp"
+                android:padding="5dp"
                 android:textAlignment="textEnd"
                 android:textColor="#000000"
                 android:textSize="40sp" />
@@ -40,11 +41,11 @@
                 android:id="@+id/Wresult"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5sp"
-                android:layout_marginEnd="5sp"
-                android:layout_marginBottom="5sp"
-                android:gravity="center_vertical"
-                android:minWidth="100dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:autoSizeTextType="none"
+                android:minWidth="80dp"
                 android:textAlignment="textStart"
                 android:textColor="#000000"
                 android:textSize="40sp" />
@@ -53,7 +54,7 @@
                 android:id="@+id/imgWrong"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:layout_margin="5sp"
+                android:layout_margin="5dp"
                 android:contentDescription="@string/wrong"
                 android:textAlignment="viewEnd"
                 app:srcCompat="@android:drawable/ic_delete" />
@@ -74,34 +75,34 @@
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5sp"
-            android:layout_marginEnd="5sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:ems="10"
             android:hint="@string/fld_result"
             android:importantForAutofill="no"
             android:inputType="numberSigned"
             android:textSize="40sp"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/btnSend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5sp"
+            android:layout_margin="5dp"
             android:onClick="Check"
             android:text="@string/btn_send"
             android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/attempts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:textSize="25sp"
                 android:visibility="invisible" />
@@ -110,12 +111,24 @@
                 android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:textAlignment="textEnd"
                 android:textColor="#000000"
                 android:textSize="35sp" />
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/solved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
